@@ -1,0 +1,434 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nagesha G | Portfolio</title>
+<style>
+/* ===== GLOBAL STYLES ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;scroll-behavior:smooth;}
+body{background:radial-gradient(circle at 10% 20%,#0a0e1a,#111a2f 85%);color:#e0e0e0;overflow-x:hidden;}
+
+/* ===== NAVBAR ===== */
+nav{position:fixed;top:0;width:100%;background:rgba(10,14,26,0.95);display:flex;justify-content:center;align-items:center;gap:35px;padding:15px;z-index:1000;border-bottom:1px solid #00d9ff33;}
+nav a{color:#00d9ff;font-weight:600;letter-spacing:0.5px;transition:0.3s;}
+nav a:hover,nav a.active{color:#00ff88;}
+
+/* ===== HERO ===== */
+.hero{display:flex;justify-content:space-between;align-items:center;min-height:100vh;padding:120px 10%;gap:50px;flex-wrap:wrap;}
+.hero-content{flex:1;min-width:300px;}
+.hero h1{font-size:3.5rem;color:#00d9ff;}
+.hero h2{font-size:1.5rem;color:#00ff88;margin-top:10px;}
+.hero p{margin-top:20px;max-width:520px;line-height:1.8;color:#cfcfcf;}
+.hero img{width:340px;height:340px;border-radius:50%;border:4px solid transparent;background:linear-gradient(90deg,#00d9ff,#00ff88) border-box;object-fit:cover;box-shadow:0 0 35px #00ff8850;}
+.hero .buttons{margin-top:30px;display:flex;gap:20px;}
+button{background:linear-gradient(90deg,#00d9ff,#00ff88);border:none;color:#0a0e1a;padding:10px 28px;border-radius:25px;font-weight:bold;cursor:pointer;transition:0.3s;}
+button:hover{transform:scale(1.05);box-shadow:0 0 20px #00ff88;}
+
+/* ===== SECTION TITLES ===== */
+section h2{font-size:2.3rem;color:#00ff88;text-align:center;margin-bottom:10px;}
+section .subtitle{text-align:center;color:#aaa;margin-bottom:40px;font-size:1rem;}
+
+/* ===== ABOUT ===== */
+#about{padding:80px 10%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-around;gap:40px;}
+#about img{width:280px;height:280px;border-radius:15px;object-fit:cover;box-shadow:0 0 25px #00ff8844;}
+.about-content{flex:1;min-width:280px;}
+.about-content h2{font-size:2.5rem;color:#00ff88;margin-bottom:10px;}
+.about-content p{color:#ccc;margin-bottom:12px;line-height:1.7;font-size:1.05rem;}
+
+/* ===== EXPERIENCE ===== */
+#experience{padding:80px 10%;text-align:center;}
+.experience-box{background:#0f1525;border:1px solid #00d9ff33;padding:30px;border-radius:15px;max-width:700px;margin:auto;box-shadow:0 0 25px #00ff8833;transition:0.3s;}
+.experience-box:hover{transform:translateY(-5px);box-shadow:0 0 35px #00ff8866;}
+.experience-box h3{color:#00d9ff;margin-bottom:10px;}
+.experience-box p{color:#ccc;line-height:1.7;}
+.experience-box span{color:#00ff88;font-weight:bold;}
+
+/* ===== SKILLS ===== */
+#skills{padding:80px 10%;}
+.skills-wrapper{display:flex;justify-content:center;flex-wrap:wrap;gap:30px;margin-top:30px;}
+.skill-column{background:#0f1525;border:1px solid #00d9ff33;box-shadow:0 0 25px #00ff8833;border-radius:15px;padding:25px;width:300px;transition:0.3s;}
+.skill-column:hover{transform:translateY(-5px);box-shadow:0 0 35px #00ff8866;}
+.skill-column h3{color:#00d9ff;text-align:center;margin-bottom:20px;}
+.skill{margin-bottom:15px;}
+.skill span{display:flex;justify-content:space-between;font-size:0.95rem;color:#eee;}
+.bar{height:8px;background:#1a1f2e;border-radius:10px;margin-top:5px;overflow:hidden;}
+.fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#00d9ff,#00ff88);}
+
+/* ===== ACHIEVEMENTS ===== */
+#achievements{padding:80px 10%;text-align:center;}
+.achievements-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:30px;}
+.achievement-box{background:#0f1525;border:1px solid #00d9ff33;padding:25px;border-radius:15px;box-shadow:0 0 20px #00ff8833;transition:0.3s;}
+.achievement-box:hover{transform:translateY(-5px);box-shadow:0 0 30px #00ff8855;}
+.achievement-box h3{color:#00d9ff;margin-bottom:10px;}
+.achievement-box p{color:#ccc;line-height:1.6;}
+
+/* ===== CONTACT ===== */
+#contact{padding:80px 10%;display:flex;flex-wrap:wrap;justify-content:space-between;gap:50px;align-items:flex-start;}
+.contact-info{flex:1;min-width:280px;}
+.contact-info h2{color:#00ff88;margin-bottom:20px;}
+.contact-info p{color:#ccc;font-size:1rem;margin-bottom:12px;}
+.contact-links a{color:#00d9ff;text-decoration:none;font-weight:500;margin-right:15px;transition:0.3s;}
+.contact-links a:hover{color:#00ff88;}
+.contact-form{flex:1;min-width:280px;}
+form{display:flex;flex-direction:column;gap:15px;}
+input,textarea{padding:12px;border:none;border-radius:8px;background:#1a1f2e;color:#eee;font-size:0.95rem;}
+textarea{resize:none;height:120px;}
+
+/* ===== FOOTER ===== */
+footer{text-align:center;padding:25px;color:#00d9ff;font-size:0.9rem;border-top:1px solid #00d9ff33;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero{flex-direction:column-reverse;text-align:center;}
+  .hero img{width:240px;height:240px;}
+  #about{flex-direction:column;text-align:center;}
+  #contact{flex-direction:column;text-align:center;}
+  .contact-links a{display:inline-block;margin-bottom:8px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <a href="#home" class="active">Home</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>👋 Hi, I'm <span style="color:#00ff88;">Nagesha G</span></h1>
+    <h2>BCA Graduate & Prompt Engineer</h2>
+    <p>Building Networks, Powering Futures — passionate about Full Stack Development, AI automation, and digital innovation.</p>
+    <div class="buttons">
+      <button onclick="scrollToSection('skills')">Explore Skills 💡</button>
+      <button onclick="scrollToSection('contact')">Let's Connect 🤝</button>
+    </div>
+  </div>
+  <img src="image.jpeg" alt="Profile Photo">
+</section>
+
+<<!-- ===== ABOUT ===== -->
+<section id="about">
+  <img src="image.jpeg" alt="About Photo">
+  <div class="about-content">
+    <h2>About Me</h2>
+    <p class="subtitle">Passionate developer blending creativity and technology.</p>
+    <p>🎯 <b>Objective:</b> To innovate in the tech world through creative, impactful solutions using AI and automation.</p>
+    <p>🚀 <b>Career Aim:</b> To become a skilled full-stack developer and AI engineer combining logic, design, and intelligent systems.</p>
+    <p>💡 Focused on efficiency, creativity, and delivering value through technology and teamwork.</p>
+    <p>🌐 Currently exploring how artificial intelligence can simplify human tasks through automation and smart design.</p>
+    <p>🧠 I enjoy experimenting with emerging technologies like machine learning, automation tools, and API integration.</p>
+    <p>🤝 I believe in teamwork, leadership, and continuous learning to grow as a professional and as a human being.</p>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <div class="experience-card">
+    <h2>💼 Experience</h2>
+    <p class="subtitle">A journey of learning, innovation, and growth.</p>
+
+    <p>🚀 I am currently working as an intern at <b>Sphereworks Inc.</b>, where I focus on building and improving <b>AI-powered automation systems</b> and <b>modern full-stack web solutions</b>.</p>
+
+    <p>💡 My role involves working on <b>Python, PHP, JavaScript, and AI API integrations</b> to create efficient, scalable, and intelligent applications.</p>
+
+    <p>🤝 This internship has strengthened my foundation in both <b>AI tool integration</b> and <b>web development</b>, while also helping me improve collaboration, creativity, and problem-solving skills.</p>
+
+    <p>🌟 <b>Company:</b> <a href="https://sphereworks.io" target="_blank" style="color:#00d9ff; text-decoration:none; font-weight:bold;">Sphereworks Inc.</a></p>
+
+    <div class="project-button">
+      <a href="https://own-clone-sportify.bolt.host" target="_blank" class="btn">🎯 View My Project</a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===== EXPERIENCE SECTION ===== */
+#experience {
+  padding: 100px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #0a0e1a, #12182b);
+}
+
+.experience-card {
+  max-width: 800px;
+  background: rgba(17, 22, 39, 0.95);
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.15), inset 0 0 15px rgba(0, 217, 255, 0.1);
+  padding: 40px;
+  color: #e0e0e0;
+  text-align: left;
+  transition: 0.3s ease;
+}
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+}
+.experience-card h2 {
+  color: #ccc;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.experience-card .subtitle {
+  color:#ccc; /* makes the subtitle white */
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.experience-card p {
+  line-height: 1.8;
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.experience-card b {
+  color: #00ff88;
+}
+.project-button {
+  text-align: center;
+  margin-top: 25px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  color: #0a0e1a;
+  background: linear-gradient(90deg, #00d9ff, #00ff88);
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+}
+</style>
+
+
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <h2> ⚙️Technical Skills</h2>
+  <p class="subtitle">Technical skills developed through education and hands-on projects.</p>
+  <div class="skills-wrapper">
+    <div class="skill-column">
+      <h3>Programming</h3>
+      <div class="skill"><span><b>Python</b><b>85%</b></span><div class="bar"><div class="fill" style="width:85%;"></div></div></div>
+      <div class="skill"><span><b>Java</b><b>75%</b></span><div class="bar"><div class="fill" style="width:75%;"></div></div></div>
+      <div class="skill"><span><b>C/C++</b><b>70%</b></span><div class="bar"><div class="fill" style="width:70%;"></div></div></div>
+    </div>
+
+    <div class="skill-column">
+      <h3>Web Technologies</h3>
+      <div class="skill"><span><b>HTML</b><b>95%</b></span><div class="bar"><div class="fill" style="width:95%;"></div></div></div>
+      <div class="skill"><span><b>CSS</b><b>90%</b></span><div class="bar"><div class="fill" style="width:90%;"></div></div></div>
+      <div class="skill"><span><b>JavaScript</b><b>80%</b></span><div class="bar"><div class="fill" style="width:80%;"></div></div></div>
+      <div class="skill"><span><b>PHP</b><b>70%</b></span><div class="bar"><div class="fill" style="width:70%;"></div></div></div>
+    </div>
+
+    <div class="skill-column">
+      <h3>Tools & Frameworks</h3>
+      <div class="skill"><span><b>Git / GitHub</b><b>85%</b></span><div class="bar"><div class="fill" style="width:85%;"></div></div></div>
+      <div class="skill"><span><b>SQL</b><b>75%</b></span><div class="bar"><div class="fill" style="width:75%;"></div></div></div>
+      <div class="skill"><span><b>Linux</b><b>65%</b></span><div class="bar"><div class="fill" style="width:65%;"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS ===== -->
+<section id="achievements">
+  <h2> 🏆Achievements</h2>
+  <p class="subtitle">Recognitions, awards, and proud moments.</p>
+  <div class="achievements-grid">
+    <div class="achievement-box">
+      <h3>🌿 State Volunteer – Kerala NSS Camp</h3>
+      <p>Represented Karnataka, fostering community service, leadership, and collaboration.</p>
+    </div>
+    <div class="achievement-box">
+      <h3>🏅 Best Team Leader Award (2025)</h3>
+      <p>Recognized for leadership excellence during state-level NSS programs.</p>
+    </div>
+    <div class="achievement-box">
+      <h3>🌱 Community Service</h3>
+      <p>Organized awareness drives, digital literacy sessions, and sustainability workshops.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="contact-card">
+    <h2>📬 Contact Me</h2>
+
+    <div class="contact-container">
+      <!-- LEFT SIDE -->
+      <div class="contact-info">
+        <p>📍 <b>Location:</b> Chikkaballapura, Karnataka</p>
+        <p>📧 <b>Email:</b> nagesha3103@gmail.com</p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/nagesha-g-33b412292/" target="_blank">🌐 LinkedIn</a>
+          <a href="https://github.com/nagesha3871" target="_blank">💻 GitHub</a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="contact-form">
+        <form onsubmit="sendMessage(event)">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input type="text" id="subject" placeholder="Subject" required />
+          <textarea id="message" placeholder="Your Message..." required></textarea>
+          <button type="submit">Send Message 🚀</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Nagesha G | Built with 💙 & Innovation</footer>
+
+<script>
+function sendMessage(e) {
+  e.preventDefault();
+  alert("📩 Thank you! Your message has been sent successfully.");
+  e.target.reset();
+}
+</script>
+
+<style>
+/* ===== CONTACT SECTION ===== */
+#contact {
+  padding: 60px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  background: #0a0e1a; /* dark navy */
+  color: #ffffff; /* white text */
+  border: 1px solid #00d9ff;
+  border-radius: 15px;
+  padding: 40px 50px;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
+  max-width: 1000px;
+  width: 100%;
+}
+
+
+.contact-card h2 {
+  text-align: center;
+  color: #00b4d8;
+  margin-bottom: 40px;
+}
+
+/* Two-column layout */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Left Side */
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.contact-links a {
+  color: #fff;
+  background: #00b4d8;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.contact-links a:hover {
+  background: #0077a7;
+  transform: scale(1.05);
+}
+
+/* Right Side (Form) */
+.contact-form {
+  flex: 1;
+  min-width: 320px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #00b4d8;
+  font-size: 1em;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.contact-form button {
+  background: #00b4d8;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #0077a7;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #555;
+  font-size: 0.9em;
+}
+</style>
+</script>
+</body>
+</html>
+
